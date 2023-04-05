@@ -1,5 +1,6 @@
 import { createCamera } from './components/camera.js';
 import { createCube } from './components/cube.js';
+import { createIco } from './components/icoSahedron.js';
 import { createScene } from './components/scene.js';
 import { createRenderer } from './systems/renderer.js';
 import { Resizer } from './systems/Resizer.js';
@@ -17,10 +18,17 @@ class World {
     renderer = createRenderer();
     container.append(renderer.domElement);
 
-    const cube = createCube();
-
-    scene.add(cube);
-
+//    const icoSa = createIco();
+    const cubes = [
+        createCube(0x44aa88,  0),
+        createCube(0x8844aa, -2),
+        createCube(0xaa8844,  2),
+      ];
+    
+    cubes.forEach((cube) => {
+        scene.add(cube);
+    });
+    
     const resizer = new Resizer(container, camera, renderer);
   }
 
