@@ -1,6 +1,6 @@
 import { createCamera } from './components/camera.js';
 import { createCube } from './components/cube.js';
-import { createIco } from './components/icoSahedron.js';
+//import { createIco } from './components/icoSahedron.js';
 import { createScene } from './components/scene.js';
 import { createRenderer } from './systems/renderer.js';
 import { Resizer } from './systems/Resizer.js';
