@@ -25,11 +25,11 @@ function main() {
   world.render();
   
   // hide the container by default
-  container.style.display = "none";
+  // container.style.display = "none";
 
   // add an event listener to the button element
-  const startButton = document.querySelector("button");
-  startButton.addEventListener("click", showDiv);
+  // const startButton = document.querySelector("button");
+  // startButton.addEventListener("click", showDiv);
 }
   
   
