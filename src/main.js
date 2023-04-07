@@ -1,7 +1,9 @@
 import {World} from  './World/World.js';
 //main fucntion
 
-function showDiv() {
+
+/*  Onclick show container 
+  function showDiv() {
     var div = document.querySelector("#scene-container");
     var button = document.querySelector("button");
     if (div.style.display === "none") {
@@ -13,7 +15,7 @@ function showDiv() {
       button.style.display = "block";
     }
   }
-  
+ */ 
  
 function main() {
   const container = document.querySelector("#scene-container");
@@ -24,12 +26,13 @@ function main() {
   // 2. Render the scene
   world.render();
   
-  // hide the container by default
-  // container.style.display = "none";
+  /* Renders container on button click
+   container.style.display = "none";
 
-  // add an event listener to the button element
-  // const startButton = document.querySelector("button");
-  // startButton.addEventListener("click", showDiv);
+  //add an event listener to the button element
+   const startButton = document.querySelector("button");
+   startButton.addEventListener("click", showDiv);
+   */
 }
   
   
