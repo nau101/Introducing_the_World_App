@@ -23,6 +23,7 @@ class World {
     container.append(renderer.domElement);
     light = createLights();
 
+    // Challange exercises
 
     /* const meshb = createIco();
     const cube1 = createCube('purple',0, MeshPhongMaterial);
@@ -45,6 +46,9 @@ class World {
     
     scene.add(light);
     const resizer = new Resizer(container, camera, renderer);
+    resizer.onResize = () => {
+      this.render();
+    };
   }
 
   render() {
