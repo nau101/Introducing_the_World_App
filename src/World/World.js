@@ -47,7 +47,8 @@ class World {
         scene.add(cube);
         loop.updatables.push(cube);
     });
-    
+
+    loop.updatables.push(camera);
     scene.add(light);
     const resizer = new Resizer(container, camera, renderer);
    
@@ -65,10 +66,7 @@ class World {
   stop(){
     loop.stop();
     }
-  tick(){
-    
-
-    };
+  tick(){};
 }
 
 export { World };

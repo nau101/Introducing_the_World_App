@@ -2,6 +2,7 @@ import { Clock } from "three";
 
 const clock = new Clock();
 
+
 class Loop{
     constructor(camera,scene,renderer){
         this.camera = camera;
@@ -10,7 +11,8 @@ class Loop{
         this.updatables = [];
     }
     start(){
-        this.renderer.setAnimationLoop(() => {
+        this.renderer.setAnimationLoop(
+            () => {
             //render a frame
             this.tick();
             this.renderer.render(this.scene,this.camera);
@@ -20,10 +22,11 @@ class Loop{
         this.renderer.setAnimationLoop(null);
     }
     tick(){
-        const delta = clock.getDelta();
+        const delta = clock.getDelta(); // measure how long pre frame took
         for(const object of this.updatables){
             object.tick(delta);
         }
+        
     }
 }
 export {Loop};

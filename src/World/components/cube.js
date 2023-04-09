@@ -1,4 +1,4 @@
-import { BoxGeometry,MathUtils , Mesh, MeshStandardMaterial,MeshToonMaterial,MeshMatcapMaterial, MeshBasicMaterial } from 'three';
+import { BoxGeometry,MathUtils, Mesh, MeshStandardMaterial,MeshToonMaterial,MeshMatcapMaterial, MeshBasicMaterial } from 'three';
 
 
 
