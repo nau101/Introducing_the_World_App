@@ -6,6 +6,7 @@ import { createLights } from './components/lights.js';
 import { createScene } from './components/scene.js';
 import { createRenderer } from './systems/renderer.js';
 import { Resizer } from './systems/Resizer.js';
+import { Loop } from './systems/Loop.js';
 
 // These variables are module-scoped: we cannot access them
 // from outside the module
@@ -13,6 +14,7 @@ let camera;
 let renderer;
 let scene;
 let light;
+let loop;
 
 class World {
   constructor(container) {
@@ -20,8 +22,9 @@ class World {
     camera = createCamera();
     scene = createScene();
     renderer = createRenderer();
-    container.append(renderer.domElement);
     light = createLights();
+    loop = new Loop(camera,scene,renderer);
+    container.append(renderer.domElement);
 
     // Challange exercises
 
@@ -42,19 +45,30 @@ class World {
     
     cubes.forEach((cube) => {
         scene.add(cube);
+        loop.updatables.push(cube);
     });
     
     scene.add(light);
     const resizer = new Resizer(container, camera, renderer);
-    resizer.onResize = () => {
-      this.render();
-    };
+   
   }
 
   render() {
     // draw a single frame
     renderer.render(scene, camera);
-  }
+    }
+
+  start(){
+    loop.start();
+      }
+      
+  stop(){
+    loop.stop();
+    }
+  tick(){
+    
+
+    };
 }
 
 export { World };
