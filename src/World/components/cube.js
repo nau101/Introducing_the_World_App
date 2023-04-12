@@ -1,12 +1,21 @@
-import { BoxGeometry,MathUtils, Mesh, MeshStandardMaterial,MeshToonMaterial,MeshMatcapMaterial, MeshBasicMaterial } from 'three';
+import { BoxGeometry,MathUtils,TextureLoader,  Mesh, MeshStandardMaterial,MeshToonMaterial,MeshMatcapMaterial, MeshBasicMaterial } from 'three';
+
+function createMaterial(color) {
+  // create a "standard" material
+  const textureLoader = new TextureLoader();
+  const texture = textureLoader.load('/assets/textures/uv-test-bw.png');
+  const material = new MeshStandardMaterial({map: texture,  bumpMap: texture});
+  material.transparent = true;
+  return material;
+  }
 
 
-function createCube(color ,x,meshMaterial){
-    const geometry = new BoxGeometry(0.5,0.5,0.5);
-    const material = new meshMaterial({color});
+function createCube(color,x,meshMaterial){
+    const geometry = new BoxGeometry(0.8,0.8,0.8);
+    const material = createMaterial(color);
     const cube = new Mesh(geometry,material);
 
-    cube.rotation.set(-0.3, -0.1, 0.8);
+    cube.rotation.set(-0.5, -0.9, 0.8);
     const radiansPerSecond = MathUtils.degToRad(30);
     cube.position.x = x;
 

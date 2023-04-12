@@ -39,12 +39,13 @@ class World {
     */
     const cubes = [
         createCube(0x44aa88, 0 , MeshStandardMaterial),
-        createCube(0x8844aa, -1, MeshToonMaterial),
-        createCube(0xaa8844,  1, MeshBasicMaterial),
+       // createCube(0x8844aa, -1, MeshToonMaterial),
+       // createCube(0xaa8844,  1, MeshBasicMaterial),
       ];
     
     cubes.forEach((cube) => {
         scene.add(cube);
+        // animation
         loop.updatables.push(cube);
     });
 
