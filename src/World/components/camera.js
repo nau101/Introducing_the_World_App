@@ -12,10 +12,12 @@ function createCamera(){
     camera.position.set(0,0,10);
     camera.tick = (delta) => {
         var pos = frameCount % 10;
-        camera.position.z += delta * pos;
-        
-        if(frameCount > 400) {
-            camera.position.set(0,0,10);
+        if (frameCount < 600) {
+            camera.position.z += delta * pos;
+        } else if (frameCount >= 600 && frameCount < 1200) {
+            camera.position.z -= delta * pos;
+        } else {
+            camera.position.set(0, 0, 10);
             frameCount = 0;
         }
         frameCount++;

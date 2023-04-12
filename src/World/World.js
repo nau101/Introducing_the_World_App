@@ -38,9 +38,9 @@ class World {
     scene.add(cube1);
     */
     const cubes = [
-        createCube(0x44aa88,  0, MeshStandardMaterial),
-        createCube(0x8844aa, -2, MeshToonMaterial),
-        createCube(0xaa8844,  2, MeshBasicMaterial),
+        createCube(0x44aa88, 0 , MeshStandardMaterial),
+        createCube(0x8844aa, -1, MeshToonMaterial),
+        createCube(0xaa8844,  1, MeshBasicMaterial),
       ];
     
     cubes.forEach((cube) => {
@@ -48,7 +48,8 @@ class World {
         loop.updatables.push(cube);
     });
 
-    loop.updatables.push(camera);
+    // camera zoom out / in
+    //loop.updatables.push(camera);
     scene.add(light);
     const resizer = new Resizer(container, camera, renderer);
    
