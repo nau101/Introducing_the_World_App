@@ -1,12 +1,12 @@
 import { MeshBasicMaterial, MeshPhongMaterial, MeshStandardMaterial, MeshToonMaterial, MathUtils} from 'three';
 import { createCamera } from './components/camera.js';
 import { createCube } from './components/cube.js';
-import { createIco } from './components/icoSahedron.js';
 import { createLights } from './components/lights.js';
 import { createScene } from './components/scene.js';
 import { createRenderer } from './systems/renderer.js';
 import { Resizer } from './systems/Resizer.js';
 import { Loop } from './systems/Loop.js';
+import { createControls } from './systems/control.js';
 
 // These variables are module-scoped: we cannot access them
 // from outside the module
@@ -25,6 +25,7 @@ class World {
     light = createLights();
     loop = new Loop(camera,scene,renderer);
     container.append(renderer.domElement);
+    const controls = createControls(camera,renderer.domElement);
 
     // Challange exercises
 
@@ -38,7 +39,7 @@ class World {
     scene.add(cube1);
     */
     const cubes = [
-        createCube(0x44aa88, 0 , MeshStandardMaterial),
+        createCube(),
        // createCube(0x8844aa, -1, MeshToonMaterial),
        // createCube(0xaa8844,  1, MeshBasicMaterial),
       ];

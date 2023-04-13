@@ -1,8 +1,8 @@
-import { DirectionalLight, MathUtils} from "three";
+import { DirectionalLight, PointLight} from "three";
 
 function createLights(){
-    const light = new DirectionalLight('white',8);
-    light.position.set(10,10,10);
+    const light = new DirectionalLight('white',10);
+    light.position.set(0,10,10);
 
     return light;
 }
